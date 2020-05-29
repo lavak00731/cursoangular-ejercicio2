@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
 import { LogOutComponent } from './components/log-out/log-out.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { LoginGuardGuard } from './guards/login-guard.guard';
+import { AuthModule } from './modules/auth/auth.module';
 
 
 const routes: Routes = [
@@ -12,13 +13,10 @@ const routes: Routes = [
     component:  HomeComponent
   },
   { 
-    path: 'login', 
-    component: LoginComponent
-  },
-  { 
-    path: 'log-out',
-    component: LogOutComponent
-  },
+    path: 'auth', 
+    loadChildren: () => import('./modules/auth/auth.module').then( m => m.AuthModule)
+    /*canActivate: [LoginGuardGuard]*/
+  },  
   {
     path: '',   
     redirectTo: '/home', 

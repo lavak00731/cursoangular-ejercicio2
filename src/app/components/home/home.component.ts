@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserType } from './../../interfaces/user-type';
+import { AuthApiServiceService } from './../../services/auth-api-service.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  user: UserType;
+
+  constructor(private _userService: AuthApiServiceService) { }
 
   ngOnInit(): void {
-  }
+    this._userService.loggedUser.subscribe((user) => this.user = user)
+  }  
 
 }

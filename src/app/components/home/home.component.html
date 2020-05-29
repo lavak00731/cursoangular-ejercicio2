@@ -1,1 +1,8 @@
-<p>home works!</p>
+<div *ngIf="!user">
+    <h1>Welcome to the Dummy App</h1>
+    <nav><a routerLink="/auth">Login</a></nav>
+</div>
+<div *ngIf="user">
+    <p>Hello {{user.name}}</p>
+</div>
+{{ user }}
