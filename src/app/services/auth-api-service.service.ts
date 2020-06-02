@@ -11,11 +11,21 @@ export class AuthApiServiceService {
     name: "",
     password: ""
   }
+  isLogged: boolean = false;
   constructor() { }
+  checkLog(log: boolean) {
+    this.isLogged = log;
+    return this.isLogged;
+  }
   setUserInfo (userData: UserType) {
-    this.userInfo.name = userData.name;
-    this.userInfo.password = userData.password;
-    this.loggedUser.next(this.userInfo);
+    if(userData !== null) {
+      this.userInfo.name = userData.name;
+      this.userInfo.password = userData.password;
+      this.loggedUser.next(this.userInfo);
+      this.checkLog(true);
+    } else {
+      this.checkLog(false);
+    }   
   }
   retrieveUserInfo() {
     return this.userInfo

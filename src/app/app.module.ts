@@ -9,7 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 
 import { CoreModule } from './modules/core/core.module';
-import { AuthModule } from './modules/auth/auth.module'
+
 
 @NgModule({
   declarations: [
@@ -21,7 +21,6 @@ import { AuthModule } from './modules/auth/auth.module'
     BrowserModule,
     BrowserAnimationsModule,
     CoreModule,
-    AuthModule,
     AppRoutingModule,
     ReactiveFormsModule,
     

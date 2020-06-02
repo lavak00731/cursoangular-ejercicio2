@@ -9,10 +9,7 @@ import { AuthApiServiceService } from './../../services/auth-api-service.service
   styleUrls: ['./log-out.component.scss']
 })
 export class LogOutComponent implements OnInit {
-  userInfo: UserType = {
-    name: "",
-    password: ""
-  }
+  
   constructor(private _loggedUser: AuthApiServiceService, private _snackBar: MatSnackBar ) { }
   showFeedback (message, action) {
     this._snackBar.open(message, action, {
@@ -21,7 +18,7 @@ export class LogOutComponent implements OnInit {
   }
   ngOnInit(): void {
     if (this._loggedUser !== undefined) {
-      this._loggedUser.setUserInfo(this.userInfo);
+      this._loggedUser.setUserInfo(null);
       this.showFeedback('You are not', 'logged anymore!');
     }
   }

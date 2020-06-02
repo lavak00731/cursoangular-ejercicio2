@@ -8,6 +8,11 @@ import { AuthModule } from './modules/auth/auth.module';
 
 
 const routes: Routes = [
+  {
+    path: '',   
+    redirectTo: '/home', 
+    pathMatch: 'full'
+  },
   { 
     path: 'home', 
     component:  HomeComponent
@@ -17,11 +22,6 @@ const routes: Routes = [
     loadChildren: () => import('./modules/auth/auth.module').then( m => m.AuthModule)
     /*canActivate: [LoginGuardGuard]*/
   },  
-  {
-    path: '',   
-    redirectTo: '/home', 
-    pathMatch: 'full'
-  },
   { 
     path: '**', 
     component: NotfoundComponent
