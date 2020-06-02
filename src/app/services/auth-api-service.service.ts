@@ -7,10 +7,7 @@ import { Subject, ReplaySubject } from 'rxjs';
 })
 export class AuthApiServiceService {
   loggedUser: Subject<UserType> = new ReplaySubject(1);
-  userInfo: UserType = {
-    name: "",
-    password: ""
-  }
+  userInfo: UserType;
   isLogged: boolean = false;
   constructor() { }
   checkLog(log: boolean) {
@@ -19,11 +16,16 @@ export class AuthApiServiceService {
   }
   setUserInfo (userData: UserType) {
     if(userData !== null) {
+      this.userInfo = {
+        name: "",
+        password: ""
+      }
       this.userInfo.name = userData.name;
       this.userInfo.password = userData.password;
       this.loggedUser.next(this.userInfo);
       this.checkLog(true);
     } else {
+      this.loggedUser.next(null);
       this.checkLog(false);
     }   
   }

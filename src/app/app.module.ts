@@ -11,11 +11,13 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { CoreModule } from './modules/core/core.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,    
     HomeComponent,
-    NotfoundComponent
+    NotfoundComponent,
+
   ],
   imports: [
     BrowserModule,
