@@ -22,7 +22,7 @@ const routes: Routes = [
   {
     path: 'people',
     canActivate: [LoginGuardGuard],
-    loadChildren: () => import('./people/people/people.module').then( m => m.PeopleModule)
+    loadChildren: () => import('./people/people.module').then( m => m.PeopleModule)
   },  
   { 
     path: '**', 

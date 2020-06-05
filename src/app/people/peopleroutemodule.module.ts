@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { PeoplelistComponent } from './../peoplelist/peoplelist.component';
-import { PeopledetailComponent } from './../peopledetail/peopledetail.component';
+import { PeoplelistComponent } from './component/peoplelist/peoplelist.component';
+import { PeopledetailComponent } from './component/peopledetail/peopledetail.component';
 
 const routes: Routes = [
   
