@@ -5,6 +5,7 @@ import { PeoplelistComponent } from './component/peoplelist/peoplelist.component
 import { PeopledetailComponent } from './component/peopledetail/peopledetail.component';
 import { PeopleService } from './people.service';
 import { HttpClientModule } from '@angular/common/http';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -15,8 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     PeopleroutemoduleModule,
-    HttpClientModule  
-    
+    HttpClientModule,  
+    MatTableModule
   ],
   providers: [
     PeopleService

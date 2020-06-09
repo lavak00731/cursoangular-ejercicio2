@@ -12,9 +12,10 @@ export class PeoplelistComponent implements OnInit {
   people: Peoplemodel[];
   ngOnInit(): void {
     this._list.getPeopleList().subscribe(x => { 
-      this.people = x.users;
-      console.log(x);
+      this.people = x.users;  
      }, y => { console.log(y)});
+     
   }
+  displayedColumns: string[] = ['id', 'name', 'phone', 'email'];
 
 }
