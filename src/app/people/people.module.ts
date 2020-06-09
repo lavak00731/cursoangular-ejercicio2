@@ -6,7 +6,9 @@ import { PeopledetailComponent } from './component/peopledetail/peopledetail.com
 import { PeopleService } from './people.service';
 import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
-
+import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input'; 
+import { OrderModule } from 'ngx-order-pipe';
 
 @NgModule({
   declarations: [
@@ -17,10 +19,13 @@ import {MatTableModule} from '@angular/material/table';
     CommonModule,
     PeopleroutemoduleModule,
     HttpClientModule,  
-    MatTableModule
+    MatTableModule,
+    MatInputModule,
+    OrderModule
   ],
   providers: [
-    PeopleService
+    PeopleService,
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
   ]
 })
 export class PeopleModule { }
